@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contribution Thank You Preview</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #f4f3f8;
+      font-family: 'Inter', Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      padding: 40px 12px;
+      color: #4a475e;
+    }
+    a { text-decoration: none; }
+    img { display: block; border: 0; }
+
+    .email-wrap {
+      max-width: 600px;
+      width: 100%;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      border: 1px solid #e1dcf5;
+    }
+
+    .email-header {
+      background: #261d59;
+      text-align: center;
+      padding: 24px 40px;
+    }
+    .email-header img {
+      display: inline-block;
+      max-width: 130px;
+      height: auto;
+    }
+
+    .email-body {
+      padding: 40px 40px 30px 40px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: #ecfdf5;
+      border: 1px solid #d1fae5;
+      color: #10b981;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .greeting {
+      font-size: 20px;
+      font-weight: 700;
+      color: #2d0745;
+      margin-bottom: 16px;
+    }
+
+    .message {
+      font-size: 14px;
+      line-height: 24px;
+      color: #4a475e;
+      margin-bottom: 24px;
+    }
+    
+    .donation-highlight {
+      background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+      border: 1px solid #e9d5ff;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+      margin: 28px 0;
+    }
+
+    .donation-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #7e22ce;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .donation-val {
+      font-size: 32px;
+      font-weight: 900;
+      color: #5b2ef7;
+    }
+
+    .btn-container {
+      text-align: center;
+      margin: 32px 0;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background-color: #5B2EF7;
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      border-radius: 6px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 4px 14px rgba(91, 46, 247, 0.25);
+    }
+
+    .disclaimer {
+      font-size: 11px;
+      line-height: 18px;
+      color: #999999;
+      text-align: justify;
+      padding-top: 20px;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .email-footer {
+      background: #261d59;
+      padding: 28px 40px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    
+    .footer-team {
+      font-size: 12px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    
+    .footer-text {
+      font-size: 11px;
+      line-height: 18px;
+      margin-bottom: 8px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .footer-copy {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="email-wrap">
+    <!-- Header -->
+    <div class="email-header">
+      <img src="https://prod-espotz-web-assets.s3.ap-south-1.amazonaws.com/espotz-images/espotz-logo.png" alt="Espotz">
+    </div>
+
+    <!-- Body -->
+    <div class="email-body">
+      <div class="badge">
+        <span>✨</span> Contribution Received
+      </div>
+
+      <h1 class="greeting">Dear Rahul,</h1>
+      
+      <div class="message">
+        Thank you for your generous contribution to the tournament <strong>BGMI Summer Showdown</strong> on Espotz!
+      </div>
+
+      <div class="donation-highlight">
+        <div class="donation-label">Amount Contributed</div>
+        <div class="donation-val">50.00 EC</div>
+      </div>
+
+      <div class="message">
+        Your contribution helps support the tournament prize pool and makes a real difference to the gaming community. We truly appreciate your support.
+      </div>
+
+      <div class="message" style="margin-bottom: 8px;">
+        You can view the tournament and see how your contribution is making an impact by clicking the link below:
+      </div>
+
+      <div class="btn-container">
+        <a href="#" class="cta-btn">View Tournament &nbsp;↗</a>
+      </div>
+
+      <div class="message" style="color: #2d0745; font-weight: 600;">
+        Thank you for being part of the Espotz community!
+      </div>
+
+      <div class="disclaimer">
+        <strong>Note:</strong> This is a computer generated email, please do not reply. In case you wish to seek more information, please contact our customer care team via phone or email. DISCLAIMER: Espotz has sent this e-mail message for the sole use of its desired recipient/s. In case you are not the intended recipient, please delete the message. Any unauthorized use of content of this email, including any attached documents, is prohibited by law.
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="email-footer">
+      <div class="footer-team">TEAM ESPOTZ</div>
+      <div class="footer-text">This is an automated transactional email from Espotz tournaments division.</div>
+      <div class="footer-copy">&copy; Espotz, 2026</div>
+    </div>
+  </div>
+
+</body>
+</html>
