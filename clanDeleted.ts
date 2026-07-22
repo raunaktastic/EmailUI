@@ -1,0 +1,222 @@
+/**
+ * Espotz — Clan Deleted Email Template
+ *
+ * Theme: "Full Banner" Layout (Matches Clan Activated layout style)
+ * Features a clean white email body, no top header, a full-width clan banner image,
+ * and the clan avatar/name overlaying the banner image at the bottom left.
+ *
+ * Template Variables:
+ *  {{logoUrl}}        — Full URL to the Espotz logo image (used in footer)
+ *  {{clanBannerUrl}}  — Cover photo of the clan
+ *  {{clanAvatarUrl}}  — Profile avatar photo of the clan
+ *  {{clanName}}       — Name of the clan (e.g. "Paneer tika")
+ *  {{memberCount}}    — Number of members in the clan (e.g. "1")
+ *  {{body}}           — Main email body content
+ *  {{unsubscribeUrl}} — URL for the unsubscribe action
+ *  {{year}}           — Current year for copyright footer
+ */
+
+export const clanDeleted = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clan Deleted</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #f4f3f8;
+      font-family: 'Inter', Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      padding: 40px 12px;
+      color: #4a475e;
+    }
+    a { text-decoration: none; }
+    img { display: block; border: 0; }
+
+    .email-wrap {
+      max-width: 600px;
+      width: 100%;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+
+    .banner-container {
+      position: relative;
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+    }
+    
+    .banner-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(80%); /* Differentiate deleted status with grayscale banner */
+    }
+
+    .banner-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 20px 30px;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .clan-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 8px;
+      border: 2px solid #b91c1c; /* Dark red border for deleted */
+      object-fit: cover;
+      filter: grayscale(80%);
+    }
+
+    .clan-info h2 {
+      color: #ffffff;
+      font-size: 20px;
+      margin-bottom: 4px;
+    }
+    .clan-info p {
+      color: #e0e0e0;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .email-body {
+      padding: 30px 40px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: #fef2f2;
+      border: 1px solid #fee2e2;
+      color: #b91c1c;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .greeting {
+      font-size: 20px;
+      font-weight: 700;
+      color: #111111;
+      margin-bottom: 16px;
+    }
+
+    .message {
+      font-size: 14px;
+      line-height: 24px;
+      color: #555555;
+      margin-bottom: 30px;
+    }
+    
+    .message strong {
+      color: #b91c1c;
+    }
+
+    .disclaimer {
+      font-size: 11px;
+      line-height: 18px;
+      color: #999999;
+      text-align: justify;
+      padding-top: 20px;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .email-footer {
+      background: #111111;
+      padding: 28px 40px;
+      text-align: center;
+      color: #888888;
+    }
+
+    .footer-logo {
+      display: inline-block;
+      max-width: 110px;
+      height: auto;
+      margin-bottom: 16px;
+    }
+    
+    .footer-team {
+      font-size: 12px;
+      font-weight: 700;
+      color: #cccccc;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    
+    .footer-text {
+      font-size: 11px;
+      line-height: 18px;
+      margin-bottom: 8px;
+    }
+
+    .footer-copy {
+      font-size: 11px;
+    }
+    .footer-copy a {
+      color: #888888;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="email-wrap">
+    <!-- Banner -->
+    <div class="banner-container">
+      <img src="{{clanBannerUrl}}" alt="Clan Banner" class="banner-img">
+      <div class="banner-overlay">
+        <img class="clan-avatar" src="{{clanAvatarUrl}}" alt="Avatar">
+        <div class="clan-info">
+          <h2>{{clanName}}</h2>
+          <p>{{memberCount}} Member</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div class="email-body">
+      <div class="badge">
+        <span>❌</span> CLAN DELETED
+      </div>
+
+      <h1 class="greeting">Hello there,</h1>
+      
+      <div class="message">
+        {{body}}
+      </div>
+
+      <div class="disclaimer">
+        <strong>Note:</strong> This is a computer generated email, please do not reply. In case you wish to seek more information, please contact our customer care team via phone or email. <strong>DISCLAIMER:</strong> Espotz has sent this e-mail message for the sole use of its desired recipient/s. In case you are not the intended recipient, please delete the message. Any unauthorized use of content of this email, including any attached documents, is prohibited by law.
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="email-footer">
+      <img class="footer-logo" src="{{logoUrl}}" alt="Espotz">
+      <div class="footer-team">TEAM ESPOTZ</div>
+      <div class="footer-text">This email was sent automatically from Espotz tournaments division.</div>
+      <div class="footer-copy">&copy; Espotz, {{year}} &nbsp;|&nbsp; <a href="{{unsubscribeUrl}}">Unsubscribe</a> to this newsletter instantly</div>
+    </div>
+  </div>
+
+</body>
+</html>\`;

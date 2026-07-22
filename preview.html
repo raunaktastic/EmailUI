@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clan Activated — Espotz [Preview]</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #f4f3f8;
+      font-family: 'Inter', Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      padding: 40px 12px;
+      color: #4a475e;
+    }
+    a { text-decoration: none; }
+    img { display: block; border: 0; }
+
+    .email-wrap {
+      max-width: 620px;
+      width: 100%;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(91,46,247,0.1);
+      border: 1px solid #e1dcf5;
+    }
+
+    .email-header {
+      background: #0a0814;
+      text-align: center;
+      padding: 22px 40px;
+      border-bottom: 1px solid #1c192d;
+    }
+    .email-header img {
+      display: inline-block;
+      max-width: 130px;
+      height: auto;
+    }
+
+    /* Split row styling */
+    .split-row {
+      display: flex;
+      padding: 40px 30px;
+      gap: 24px;
+    }
+
+    /* Column 1: Clan ID Badge */
+    .id-badge {
+      width: 220px;
+      background-color: #0a0814;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(10,8,20,0.15);
+      border: 1px solid rgba(255,255,255,0.08);
+      flex-shrink: 0;
+      align-self: flex-start;
+    }
+    .badge-cover {
+      height: 120px;
+      background-image: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=220&h=120');
+      background-size: cover;
+      background-position: top center;
+      position: relative;
+    }
+    .badge-cover::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(to top, rgba(10,8,20,1) 0%, rgba(10,8,20,0.1) 100%);
+    }
+    .badge-details {
+      padding: 0 16px 24px;
+      text-align: center;
+    }
+    .badge-avatar-wrap {
+      margin-top: -30px;
+      position: relative;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+    }
+    .clan-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 3px solid #0a0814;
+      object-fit: cover;
+    }
+    .clan-name {
+      font-size: 16px;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 12px 0 2px;
+    }
+    .clan-status {
+      font-size: 11px;
+      color: #00d4ff;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .clan-roster {
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      margin-top: 8px;
+    }
+
+    /* Column 2: Notification text content */
+    .content-side {
+      flex: 1;
+      font-family: 'Inter', Arial, sans-serif;
+    }
+    .side-badge {
+      font-size: 11px;
+      font-weight: 900;
+      color: #5B2EF7;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+    .main-title {
+      font-size: 26px;
+      font-weight: 900;
+      color: #0a0814;
+      line-height: 30px;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+    .greeting {
+      font-size: 14px;
+      font-weight: 700;
+      color: #0a0814;
+      margin-bottom: 10px;
+    }
+    .body-text {
+      font-size: 14px;
+      line-height: 24px;
+      color: #4a475e;
+      margin-bottom: 24px;
+    }
+
+    /* Button */
+    .cta-btn {
+      display: inline-block;
+      padding: 12px 32px;
+      background-color: #5B2EF7;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      border-radius: 8px;
+      box-shadow: 0 4px 14px rgba(91,46,247,0.35);
+      transition: all 0.2s ease;
+    }
+    .cta-btn:hover {
+      background-color: #4920d9;
+      transform: translateY(-1px);
+    }
+
+    /* Info card section */
+    .info-card-wrap {
+      padding: 0 30px 30px;
+    }
+    .info-card {
+      background-color: #f9f8ff;
+      border-radius: 12px;
+      border: 1px solid #e1dcf5;
+      padding: 16px 20px;
+      font-size: 13px;
+      line-height: 20px;
+      color: #4a475e;
+    }
+    .info-card strong {
+      color: #0a0814;
+    }
+
+    /* Divider */
+    .divider {
+      height: 1px;
+      background-color: #e5e7eb;
+      margin: 0 30px 24px;
+    }
+
+    /* Disclaimer */
+    .disclaimer {
+      padding: 0 30px 36px;
+      font-size: 11px;
+      line-height: 18px;
+      color: #9895a6;
+    }
+    .disclaimer b { color: #575566; }
+
+    /* Footer */
+    .email-footer {
+      background: #0a0814;
+      padding: 24px 40px;
+      text-align: center;
+      border-top: 1px solid #1c192d;
+    }
+    .footer-team {
+      font-size: 13px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 4px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+    }
+    .footer-copy a {
+      color: #5B2EF7;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 620px) {
+      body { padding: 20px 0; }
+      .email-wrap { border-radius: 0; border: none; }
+      .split-row { flex-direction: column; padding: 28px 20px; }
+      .id-badge { width: 100%; }
+      .content-side { margin-top: 24px; }
+      .info-card-wrap { padding: 0 20px 20px; }
+      .divider { margin: 0 20px 20px; }
+      .disclaimer { padding: 0 20px 28px; }
+      .email-footer { padding: 20px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="email-wrap">
+
+    <!-- HEADER: Top Bar -->
+    <div class="email-header">
+      <img src="https://prod-espotz-web-assets.s3.ap-south-1.amazonaws.com/espotz-images/espotz-logo.png" alt="Espotz">
+    </div>
+
+    <!-- Split content layout -->
+    <div class="split-row">
+
+      <!-- Column 1: Clan ID badge -->
+      <div class="id-badge">
+        <div class="badge-cover"></div>
+        <div class="badge-details">
+          <div class="badge-avatar-wrap">
+            <img class="clan-avatar" src="clan_avatar.png" alt="Avatar">
+          </div>
+          <h3 class="clan-name">Paneer tika</h3>
+          <p class="clan-status">ACTIVE CLAN</p>
+          <p class="clan-roster">1 Member(s)</p>
+        </div>
+      </div>
+
+      <!-- Column 2: Details side -->
+      <div class="content-side">
+        <span class="side-badge">⚡ NOTIFICATION</span>
+        <h1 class="main-title">Your Squad is Active!</h1>
+        <p class="greeting">Hello Commander,</p>
+        <p class="body-text">
+          Congratulations! Your clan <strong style="color: #5B2EF7;">Paneer tika</strong> has been
+          successfully activated on Espotz. Your banner is hoisted, and your warriors are officially ready for competition.
+          It's time to set your squad strategy, climb the competitive ladders, and conquer the leaderboards.
+        </p>
+        <a href="#" class="cta-btn">Enter Arena &rarr;</a>
+      </div>
+
+    </div>
+
+    <!-- Info card -->
+    <div class="info-card-wrap">
+      <div class="info-card">
+        <strong>What's next?</strong> Go register for upcoming tournaments, customize your clan social links, manage sponsors, and build your official roster.
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="divider"></div>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer">
+      <b>Note:</b> This is an automated email pass, please do not reply.
+      <b>DISCLAIMER:</b> Sent by Espotz for the intended recipient. If you are not the intended recipient, please delete this email immediately.
+    </div>
+
+    <!-- FOOTER -->
+    <div class="email-footer">
+      <p class="footer-team">Team Espotz</p>
+      <p class="footer-copy">&copy; Espotz, 2026 &nbsp;|&nbsp; <a href="#">Unsubscribe</a></p>
+    </div>
+
+  </div>
+
+</body>
+</html>
