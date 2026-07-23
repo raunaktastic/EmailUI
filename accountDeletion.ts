@@ -67,7 +67,7 @@ export const accountDeletion = `<!DOCTYPE html>
       gap: 6px;
       background-color: #fef2f2;
       border: 1px solid #fee2e2;
-      color: #b91c1c;
+      color: #dc2626;
       padding: 6px 14px;
       border-radius: 20px;
       font-size: 11px;
@@ -92,18 +92,18 @@ export const accountDeletion = `<!DOCTYPE html>
     }
     
     .whats-next {
-      background-color: #fffaf0;
-      border: 1px solid #fbd38d;
-      border-left: 3px solid #dd6b20;
+      background-color: #fef2f2;
+      border: 1px solid #fee2e2;
+      border-left: 3px solid #dc2626;
       border-radius: 6px;
       padding: 20px;
       font-size: 13px;
       line-height: 22px;
-      color: #7b341e;
+      color: #991b1b;
       margin-bottom: 30px;
     }
     .whats-next strong {
-      color: #c05621;
+      color: #991b1b;
     }
 
     .btn-container {
@@ -114,7 +114,7 @@ export const accountDeletion = `<!DOCTYPE html>
     .cta-btn {
       display: inline-block;
       padding: 14px 32px;
-      background-color: #ef4444;
+      background-color: #dc2626;
       color: #ffffff;
       font-size: 13px;
       font-weight: 700;
@@ -179,7 +179,7 @@ export const accountDeletion = `<!DOCTYPE html>
     <!-- Body -->
     <div class="email-body">
       <div class="badge">
-        <span>⚠️</span> CONFIRM DELETION
+        <span>⚠️</span> ACCOUNT SECURITY
       </div>
 
       <h1 class="greeting">Hi {{name}},</h1>

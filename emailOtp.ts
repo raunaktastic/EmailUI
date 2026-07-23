@@ -3,7 +3,7 @@
  *
  * Theme: Full Banner Light Layout (Consistent with Clan templates)
  * Features a top banner image, a clean white email body,
- * and a prominent passcode hero card.
+ * and a premium, clean verification code box inspired by top tech companies.
  *
  * Template Variables:
  *  {{logoUrl}}       — Full URL to the Espotz logo image
@@ -18,7 +18,7 @@ export const emailOtp = `<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Login Code</title>
+  <title>Your Verification Code</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -65,9 +65,9 @@ export const emailOtp = `<!DOCTYPE html>
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background-color: #f6f4ff;
-      border: 1px solid #e9e5ff;
-      color: #5B2EF7;
+      background-color: #f8fafc;
+      border: 1px solid #e2e8f0;
+      color: #475569;
       padding: 6px 14px;
       border-radius: 20px;
       font-size: 11px;
@@ -80,7 +80,7 @@ export const emailOtp = `<!DOCTYPE html>
     .greeting {
       font-size: 20px;
       font-weight: 700;
-      color: #111111;
+      color: #1e1b4b;
       margin-bottom: 16px;
     }
 
@@ -92,7 +92,7 @@ export const emailOtp = `<!DOCTYPE html>
     }
     
     .message strong {
-      color: #5B2EF7;
+      color: #111111;
     }
 
     .otp-container {
@@ -102,15 +102,16 @@ export const emailOtp = `<!DOCTYPE html>
 
     .otp-box {
       display: inline-block;
-      background-color: #f6f4ff;
-      border: 2px dashed #5B2EF7;
+      background-color: #f8fafc;
+      border: 1px solid #cbd5e1;
       border-radius: 8px;
-      padding: 16px 32px;
+      padding: 18px 36px;
       font-family: 'Courier New', Courier, monospace;
-      font-size: 36px;
+      font-size: 38px;
       font-weight: 800;
       letter-spacing: 8px;
-      color: #2d0745;
+      color: #1e1b4b;
+      box-shadow: inset 0 1px 2px rgba(0,0,0,0.02);
     }
 
     .disclaimer {
@@ -167,13 +168,13 @@ export const emailOtp = `<!DOCTYPE html>
     <!-- Body -->
     <div class="email-body">
       <div class="badge">
-        <span>🔑</span> SECURE LOGIN
+        <span>🔒</span> SECURITY VERIFICATION
       </div>
 
       <h1 class="greeting">Hi {{name}},</h1>
       
       <div class="message">
-        Use the code below to sign in to <strong>Espotz</strong>. The code is valid for 10 minutes — type it into the same screen where you entered your email.
+        Use the verification code below to sign in to <strong>Espotz</strong>. The code is valid for 10 minutes — enter it on the screen where you entered your email.
       </div>
 
       <div class="otp-container">
@@ -181,11 +182,11 @@ export const emailOtp = `<!DOCTYPE html>
       </div>
 
       <div class="message" style="font-size: 13px; color: #666666;">
-        If you didn't request this code, you can safely ignore this email — someone may have typed your address by mistake.
+        If you did not request this verification code, you can safely ignore this email. Someone may have typed your address by mistake.
       </div>
 
       <div class="disclaimer">
-        <strong>Note:</strong> This is a computer-generated email — please do not reply. For help, contact our support team.
+        <strong>Note:</strong> This is an automated security email — please do not reply. For assistance, contact our support team.
       </div>
     </div>
 
@@ -193,7 +194,7 @@ export const emailOtp = `<!DOCTYPE html>
     <div class="email-footer">
       <img class="footer-logo" src="{{logoUrl}}" alt="Espotz">
       <div class="footer-team">TEAM ESPOTZ</div>
-      <div class="footer-text">This is an automated transactional email from Espotz security team.</div>
+      <div class="footer-text">This is an automated transactional security alert from Espotz.</div>
       <div class="footer-copy">&copy; Espotz, {{year}}</div>
     </div>
   </div>
