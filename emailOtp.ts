@@ -1,16 +1,15 @@
 /**
- * Espotz — Login Verification Code Email Template
+ * Espotz — Login Code Email Template
  *
- * Theme: Corporate Security/Business Perspective (Consistent with Clan layouts)
- * Features a top banner image, a clean structured white card, a professional
- * authentication code block, and transaction metadata.
+ * Theme: Minimalist Security Verification (OpenAI Style)
+ * Features a clean, distraction-free layout with a centered logo,
+ * elegant typography, and a large, high-impact centered code.
  *
  * Template Variables:
- *  {{logoUrl}}       — Full URL to the Espotz logo image
- *  {{clanBannerUrl}} — Full URL to the clan banner image
- *  {{name}}          — The user's name
- *  {{code}}          — The 6-digit login code
- *  {{year}}          — Current year for copyright footer
+ *  {{logoUrl}}   — Full URL to the Espotz logo image
+ *  {{name}}      — The user's name
+ *  {{code}}      — The 6-digit login code
+ *  {{year}}      — Current year for copyright footer
  */
 
 export const emailOtp = `<!DOCTYPE html>
@@ -18,217 +17,127 @@ export const emailOtp = `<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Verification Code</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <title>Your Verification Code</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      background-color: #f4f3f8;
+      background-color: #f9fafb;
       font-family: 'Inter', Arial, sans-serif;
       -webkit-font-smoothing: antialiased;
       padding: 40px 12px;
-      color: #475569;
+      color: #374151;
     }
     a { text-decoration: none; }
     img { display: block; border: 0; }
 
     .email-wrap {
-      max-width: 600px;
+      max-width: 560px;
       width: 100%;
       margin: 0 auto;
       background-color: #ffffff;
-      border-radius: 8px;
+      border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+      border: 1px solid #f3f4f6;
+      padding: 48px 40px;
     }
 
-    .banner-container {
-      position: relative;
-      width: 100%;
-      height: 220px;
-      overflow: hidden;
+    .logo-container {
+      text-align: center;
+      margin-bottom: 40px;
     }
     
-    .banner-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .email-body {
-      padding: 36px 40px;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background-color: #f8fafc;
-      border: 1px solid #e2e8f0;
-      color: #334155;
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
+    .logo-container img {
+      display: inline-block;
+      max-width: 120px;
+      height: auto;
     }
 
     .greeting {
       font-size: 20px;
-      font-weight: 700;
-      color: #0f172a;
+      font-weight: 600;
+      color: #111827;
       margin-bottom: 16px;
+      letter-spacing: -0.25px;
     }
 
     .message {
-      font-size: 14px;
+      font-size: 15px;
       line-height: 24px;
-      color: #475569;
-      margin-bottom: 24px;
+      color: #4b5563;
+      margin-bottom: 32px;
     }
-    
-    .otp-container {
+
+    .code-container {
       text-align: center;
-      margin: 28px 0;
+      margin: 36px 0;
     }
 
-    .otp-box {
+    .code-display {
       display: inline-block;
-      background-color: #f8fafc;
-      border: 1px solid #cbd5e1;
-      border-radius: 6px;
-      padding: 18px 40px;
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 40px;
-      font-weight: 800;
-      letter-spacing: 8px;
-      color: #0f172a;
-      box-shadow: inset 0 1px 2px rgba(0,0,0,0.02);
-    }
-
-    .meta-box {
-      background-color: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 6px;
-      padding: 16px 20px;
-      margin-bottom: 24px;
-      font-size: 12px;
-      line-height: 20px;
-      color: #64748b;
-    }
-
-    .meta-title {
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: 44px;
       font-weight: 700;
-      color: #475569;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 8px;
+      letter-spacing: 6px;
+      color: #5B2EF7;
+      padding: 12px 24px;
+      background-color: #f3f0ff;
+      border-radius: 8px;
     }
 
-    .meta-row {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 4px;
+    .divider {
+      height: 1px;
+      background-color: #f3f4f6;
+      margin: 32px 0;
     }
 
     .disclaimer {
-      font-size: 11px;
-      line-height: 18px;
-      color: #94a3b8;
-      text-align: justify;
-      padding-top: 20px;
-      border-top: 1px solid #f1f5f9;
-    }
-
-    .email-footer {
-      background: #111111;
-      padding: 28px 40px;
-      text-align: center;
-      color: #888888;
-    }
-
-    .footer-logo {
-      display: inline-block;
-      max-width: 110px;
-      height: auto;
-      margin-bottom: 16px;
-    }
-    
-    .footer-team {
       font-size: 12px;
-      font-weight: 700;
-      color: #cccccc;
-      margin-bottom: 8px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-    
-    .footer-text {
-      font-size: 11px;
-      line-height: 18px;
-      margin-bottom: 8px;
+      line-height: 20px;
+      color: #9ca3af;
     }
 
-    .footer-copy {
-      font-size: 11px;
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 12px;
+      color: #9ca3af;
     }
   </style>
 </head>
 <body>
 
   <div class="email-wrap">
-    <!-- Banner -->
-    <div class="banner-container">
-      <img src="{{clanBannerUrl}}" alt="Security Banner" class="banner-img">
+    <!-- Centered Logo -->
+    <div class="logo-container">
+      <img src="{{logoUrl}}" alt="Espotz">
     </div>
 
-    <!-- Body -->
-    <div class="email-body">
-      <div class="badge">
-        <span>🔒</span> SECURITY VERIFICATION
-      </div>
-
-      <h1 class="greeting">Hi {{name}},</h1>
-      
-      <div class="message">
-        Use the verification code below to sign in to your <strong>Espotz Account</strong>. The code is valid for 10 minutes — type it into the screen where you entered your email.
-      </div>
-
-      <div class="otp-container">
-        <div class="otp-box">{{code}}</div>
-      </div>
-
-      <div class="meta-box">
-        <div class="meta-title">Request Details</div>
-        <div class="meta-row">
-          <span>Security Event:</span>
-          <strong>Account Login Verification</strong>
-        </div>
-        <div class="meta-row">
-          <span>Expiry:</span>
-          <strong>10 Minutes (One-Time Use Only)</strong>
-        </div>
-      </div>
-
-      <div class="message" style="font-size: 13px; color: #64748b;">
-        If you did not request this verification code, please ignore this email. Your password and account details remain secure.
-      </div>
-
-      <div class="disclaimer">
-        <strong>Note:</strong> This is an automated transactional security alert from Espotz — please do not reply. For help, contact our support team.
-      </div>
+    <!-- Body Content -->
+    <h1 class="greeting">Hi {{name}},</h1>
+    
+    <div class="message">
+      Use the code below to sign in to <strong>Espotz</strong>. The code is valid for 10 minutes — type it into the same screen where you entered your email.
     </div>
 
-    <!-- Footer -->
-    <div class="email-footer">
-      <img class="footer-logo" src="{{logoUrl}}" alt="Espotz">
-      <div class="footer-team">TEAM ESPOTZ</div>
-      <div class="footer-text">This is an automated transactional email from Espotz security team.</div>
-      <div class="footer-copy">&copy; Espotz, {{year}}</div>
+    <div class="code-container">
+      <div class="code-display">{{code}}</div>
+    </div>
+
+    <div class="message" style="font-size: 14px; margin-bottom: 0;">
+      If you didn't request this code, you can safely ignore this email — someone may have typed your address by mistake.
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="disclaimer">
+      <strong>Note:</strong> This is a computer-generated email — please do not reply. For help, contact our support team.
+    </div>
+
+    <!-- Minimal Footer -->
+    <div class="footer">
+      <p style="margin-bottom: 4px;">&copy; Espotz, {{year}}</p>
     </div>
   </div>
 
