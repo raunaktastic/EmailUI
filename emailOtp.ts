@@ -6,11 +6,11 @@
  * and a prominent passcode hero card.
  *
  * Template Variables:
- *  {{logoUrl}}   — Full URL to the Espotz logo image
- *  {{bannerUrl}} — Full URL to the security/authenticator banner image
- *  {{name}}      — The user's name
- *  {{code}}      — The 6-digit login code
- *  {{year}}      — Current year for copyright footer
+ *  {{logoUrl}}       — Full URL to the Espotz logo image
+ *  {{clanBannerUrl}} — Full URL to the clan banner image
+ *  {{name}}          — The user's name
+ *  {{code}}          — The 6-digit login code
+ *  {{year}}          — Current year for copyright footer
  */
 
 export const emailOtp = `<!DOCTYPE html>
@@ -161,7 +161,7 @@ export const emailOtp = `<!DOCTYPE html>
   <div class="email-wrap">
     <!-- Banner -->
     <div class="banner-container">
-      <img src="{{bannerUrl}}" alt="Security Banner" class="banner-img">
+      <img src="{{clanBannerUrl}}" alt="Security Banner" class="banner-img">
     </div>
 
     <!-- Body -->

@@ -7,7 +7,7 @@
  *
  * Template Variables:
  *  {{logoUrl}}        — Full URL to the Espotz logo image
- *  {{bannerUrl}}      — Full URL to the celebratory banner image
+ *  {{clanBannerUrl}}  — Full URL to the clan banner image
  *  {{name}}           — The user's name
  *  {{donationAmount}} — The donation amount (e.g. 50.00)
  *  {{tournamentName}} — Name of the tournament
@@ -179,7 +179,7 @@ export const Contributiontemplate = `<!DOCTYPE html>
   <div class="email-wrap">
     <!-- Banner -->
     <div class="banner-container">
-      <img src="{{bannerUrl}}" alt="Contribution Banner" class="banner-img">
+      <img src="{{clanBannerUrl}}" alt="Contribution Banner" class="banner-img">
     </div>
 
     <!-- Body -->

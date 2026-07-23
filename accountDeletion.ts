@@ -6,11 +6,11 @@
  * and a weighty red confirmation button.
  *
  * Template Variables:
- *  {{logoUrl}}    — Full URL to the Espotz logo image
- *  {{bannerUrl}}  — Full URL to the warning banner image
- *  {{name}}       — The user's name
- *  {{confirmUrl}} — One-time confirmation link
- *  {{year}}       — Current year for copyright footer
+ *  {{logoUrl}}       — Full URL to the Espotz logo image
+ *  {{clanBannerUrl}} — Full URL to the clan banner image
+ *  {{name}}          — The user's name
+ *  {{confirmUrl}}    — One-time confirmation link
+ *  {{year}}          — Current year for copyright footer
  */
 
 export const accountDeletion = `<!DOCTYPE html>
@@ -173,7 +173,7 @@ export const accountDeletion = `<!DOCTYPE html>
   <div class="email-wrap">
     <!-- Banner -->
     <div class="banner-container">
-      <img src="{{bannerUrl}}" alt="Warning Banner" class="banner-img">
+      <img src="{{clanBannerUrl}}" alt="Warning Banner" class="banner-img">
     </div>
 
     <!-- Body -->

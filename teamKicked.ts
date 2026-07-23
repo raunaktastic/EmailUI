@@ -7,7 +7,7 @@
  *
  * Template Variables:
  *  {{logoUrl}}        — Full URL to the Espotz logo image
- *  {{bannerUrl}}      — Full URL to the tournament banner image
+ *  {{clanBannerUrl}}  — Full URL to the clan banner image
  *  {{playerName}}     — The user's name
  *  {{tournamentName}} — Name of the tournament
  *  {{tournamentsLink}} — Link to the tournaments exploration page
@@ -163,7 +163,7 @@ export const teamKicked = `<!DOCTYPE html>
   <div class="email-wrap">
     <!-- Banner -->
     <div class="banner-container">
-      <img src="{{bannerUrl}}" alt="Tournament Banner" class="banner-img">
+      <img src="{{clanBannerUrl}}" alt="Tournament Banner" class="banner-img">
     </div>
 
     <!-- Body -->
