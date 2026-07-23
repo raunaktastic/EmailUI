@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Confirm Account Deletion Preview</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      background-color: #0b071e;
+      background-color: #f4f3f8;
       font-family: 'Inter', Arial, sans-serif;
       -webkit-font-smoothing: antialiased;
       padding: 40px 12px;
-      color: #b0a8d6;
+      color: #4a475e;
     }
     a { text-decoration: none; }
     img { display: block; border: 0; }
@@ -21,101 +21,79 @@
       max-width: 600px;
       width: 100%;
       margin: 0 auto;
-      background-color: #120d2d;
-      border-radius: 16px;
+      background-color: #ffffff;
+      border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 10px 40px rgba(239, 68, 68, 0.15);
-      border: 1px solid rgba(239, 68, 68, 0.3);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      border: 1px solid #e1dcf5;
     }
 
-    .email-header {
-      background: linear-gradient(135deg, #1b0c3d 0%, #0d0626 100%);
-      text-align: center;
-      padding: 28px 40px;
-      border-bottom: 1px solid rgba(239, 68, 68, 0.2);
+    .banner-container {
+      position: relative;
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
     }
-    .email-header img {
-      display: inline-block;
-      max-width: 130px;
-      height: auto;
+    
+    .banner-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .email-body {
-      padding: 40px 40px 30px 40px;
-      background: radial-gradient(circle at top, #2b0e22 0%, #120d2d 100%);
-    }
-
-    .badge-container {
-      margin-bottom: 24px;
+      padding: 30px 40px;
     }
 
     .badge {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background-color: rgba(239, 68, 68, 0.15);
-      border: 1px solid rgba(239, 68, 68, 0.4);
-      color: #ff4d4d;
+      background-color: #fef2f2;
+      border: 1px solid #fee2e2;
+      color: #b91c1c;
       padding: 6px 14px;
       border-radius: 20px;
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 1.5px;
+      letter-spacing: 1px;
       text-transform: uppercase;
+      margin-bottom: 20px;
     }
 
     .greeting {
-      font-size: 22px;
-      font-weight: 800;
-      color: #ffffff;
+      font-size: 20px;
+      font-weight: 700;
+      color: #111111;
       margin-bottom: 16px;
-      letter-spacing: -0.5px;
     }
 
     .message {
       font-size: 14px;
       line-height: 24px;
-      color: #b0a8d6;
+      color: #555555;
       margin-bottom: 24px;
     }
     
-    .alert-panel {
-      background-color: #0c0511;
-      border: 1px solid rgba(239, 68, 68, 0.3);
-      border-radius: 12px;
+    .whats-next {
+      background-color: #fffaf0;
+      border: 1px solid #fbd38d;
+      border-left: 3px solid #dd6b20;
+      border-radius: 6px;
       padding: 20px;
-      margin: 24px 0;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .alert-panel::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; height: 3px;
-      background: repeating-linear-gradient(45deg, #ef4444, #ef4444 10px, #000000 10px, #000000 20px);
-    }
-
-    .alert-title {
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 11px;
-      font-weight: 700;
-      color: #ff4d4d;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-top: 6px;
-      margin-bottom: 10px;
-    }
-
-    .alert-text {
       font-size: 13px;
-      line-height: 20px;
-      color: #e2d9f3;
+      line-height: 22px;
+      color: #7b341e;
+      margin-bottom: 30px;
+    }
+    .whats-next strong {
+      color: #c05621;
     }
 
     .btn-container {
       text-align: center;
-      margin: 32px 0;
+      margin-bottom: 30px;
     }
 
     .cta-btn {
@@ -130,57 +108,35 @@
       border-radius: 6px;
       width: 100%;
       text-align: center;
-      box-shadow: 0 4px 14px rgba(239, 68, 68, 0.4);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-    }
-
-    .fallback-container {
-      background-color: #080517;
-      border: 1px solid rgba(91, 46, 247, 0.15);
-      border-radius: 8px;
-      padding: 16px;
-      margin: 24px 0;
-      word-break: break-all;
-    }
-
-    .fallback-title {
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 10px;
-      font-weight: 700;
-      color: #6d668c;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 8px;
-    }
-
-    .fallback-url {
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 12px;
-      color: #00d4ff;
-      line-height: 18px;
     }
 
     .disclaimer {
       font-size: 11px;
       line-height: 18px;
-      color: #6d668c;
+      color: #999999;
       text-align: justify;
       padding-top: 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      border-top: 1px solid #eeeeee;
     }
 
     .email-footer {
-      background: linear-gradient(135deg, #1b0c3d 0%, #0d0626 100%);
+      background: #111111;
       padding: 28px 40px;
       text-align: center;
-      border-top: 1px solid rgba(239, 68, 68, 0.2);
-      color: rgba(255, 255, 255, 0.6);
+      color: #888888;
+    }
+
+    .footer-logo {
+      display: inline-block;
+      max-width: 110px;
+      height: auto;
+      margin-bottom: 16px;
     }
     
     .footer-team {
       font-size: 12px;
       font-weight: 700;
-      color: #ffffff;
+      color: #cccccc;
       margin-bottom: 8px;
       letter-spacing: 1px;
       text-transform: uppercase;
@@ -190,55 +146,48 @@
       font-size: 11px;
       line-height: 18px;
       margin-bottom: 8px;
-      color: rgba(255, 255, 255, 0.4);
     }
 
     .footer-copy {
       font-size: 11px;
-      color: rgba(255, 255, 255, 0.3);
     }
   </style>
 </head>
 <body>
 
   <div class="email-wrap">
-    <!-- Header -->
-    <div class="email-header">
-      <img src="https://prod-espotz-web-assets.s3.ap-south-1.amazonaws.com/espotz-images/espotz-logo.png" alt="Espotz">
+    <!-- Banner -->
+    <div class="banner-container">
+      <img src="https://images.unsplash.com/photo-1597839219216-a773cb2473e4?auto=format&fit=crop&q=80&w=600&h=220" alt="Warning Banner" class="banner-img">
     </div>
 
     <!-- Body -->
     <div class="email-body">
-      <div class="badge-container">
-        <div class="badge">
-          <span>⚠️</span> DELETION REQUEST
-        </div>
+      <div class="badge">
+        <span>⚠️</span> CONFIRM DELETION
       </div>
 
       <h1 class="greeting">Hi Rahul,</h1>
       
       <div class="message">
-        We received a request to <strong>permanently delete your Espotz account</strong>. To confirm the deletion command, click the override button below.
+        We received a request to <strong>permanently delete your Espotz account</strong>. To confirm, tap the button below. This will delete your account and personal data and sign you out everywhere.
       </div>
 
-      <div class="alert-panel">
-        <div class="alert-title">CRITICAL WARNING</div>
-        <div class="alert-text">
-          This action will permanently purge your profile, wallet, gaming records, tournament statistics, and squad connections. <strong>This cannot be undone.</strong>
-        </div>
+      <div class="whats-next">
+        <strong>⚠️ WARNING:</strong> This action cannot be undone. All your gaming statistics, achievements, wallets, and registered tournament data will be permanently wiped out.
       </div>
 
       <div class="btn-container">
         <a href="#" class="cta-btn">Confirm account deletion</a>
       </div>
 
-      <div class="message" style="font-size: 13px; color: #877fa3;">
-        This validation link expires in <strong>1 hour</strong> and can only be triggered once. If you did not request this deletion override, please ignore this warning.
+      <div class="message" style="font-size: 13px; color: #666666;">
+        This link expires in <strong>1 hour</strong> and can be used once. If the button doesn't work, copy and paste this URL into your browser:<br/>
+        <a href="#" style="color:#5B2EF7;word-break:break-all">https://espotz.live/delete-account/confirm?token=xyz123abc</a>
       </div>
 
-      <div class="fallback-container">
-        <div class="fallback-title">SECURE OVERRIDE URL Fallback</div>
-        <div class="fallback-url">https://espotz.live/delete-account/confirm?token=xyz123abc</div>
+      <div class="message" style="font-size: 13px; color: #666666; margin-top: 10px;">
+        If you didn't request this, you can safely ignore this email — your account will not be deleted.
       </div>
 
       <div class="disclaimer">
@@ -248,8 +197,9 @@
 
     <!-- Footer -->
     <div class="email-footer">
+      <img class="footer-logo" src="https://prod-espotz-web-assets.s3.ap-south-1.amazonaws.com/espotz-images/espotz-logo.png" alt="Espotz">
       <div class="footer-team">TEAM ESPOTZ</div>
-      <div class="footer-text">This is an automated transactional security alert from Espotz security network.</div>
+      <div class="footer-text">This is an automated transactional email from Espotz security team.</div>
       <div class="footer-copy">&copy; Espotz, 2026</div>
     </div>
   </div>

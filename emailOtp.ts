@@ -1,9 +1,16 @@
 /**
  * Espotz — Login Code Email Template
  *
- * Theme: Gamer Authenticator Console (Creative Overhaul)
- * Features a glowing cosmic dark theme, neon scanner effects,
- * and a high-impact digital passcode console display.
+ * Theme: Full Banner Light Layout (Consistent with Clan templates)
+ * Features a top banner image, a clean white email body,
+ * and a prominent passcode hero card.
+ *
+ * Template Variables:
+ *  {{logoUrl}}   — Full URL to the Espotz logo image
+ *  {{bannerUrl}} — Full URL to the security/authenticator banner image
+ *  {{name}}      — The user's name
+ *  {{code}}      — The 6-digit login code
+ *  {{year}}      — Current year for copyright footer
  */
 
 export const emailOtp = `<!DOCTYPE html>
@@ -12,15 +19,15 @@ export const emailOtp = `<!DOCTYPE html>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Login Code</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      background-color: #0b071e;
+      background-color: #f4f3f8;
       font-family: 'Inter', Arial, sans-serif;
       -webkit-font-smoothing: antialiased;
       padding: 40px 12px;
-      color: #b0a8d6;
+      color: #4a475e;
     }
     a { text-decoration: none; }
     img { display: block; border: 0; }
@@ -29,130 +36,110 @@ export const emailOtp = `<!DOCTYPE html>
       max-width: 600px;
       width: 100%;
       margin: 0 auto;
-      background-color: #120d2d;
-      border-radius: 16px;
+      background-color: #ffffff;
+      border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 10px 40px rgba(91, 46, 247, 0.15);
-      border: 1px solid rgba(91, 46, 247, 0.25);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      border: 1px solid #e1dcf5;
     }
 
-    .email-header {
-      background: linear-gradient(135deg, #1b0c3d 0%, #0d0626 100%);
-      text-align: center;
-      padding: 28px 40px;
-      border-bottom: 1px solid rgba(91, 46, 247, 0.15);
+    .banner-container {
+      position: relative;
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
     }
-    .email-header img {
-      display: inline-block;
-      max-width: 130px;
-      height: auto;
+    
+    .banner-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .email-body {
-      padding: 40px 40px 30px 40px;
-      background: radial-gradient(circle at top, #1c1445 0%, #120d2d 100%);
-    }
-
-    .badge-container {
-      margin-bottom: 24px;
+      padding: 30px 40px;
     }
 
     .badge {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background-color: rgba(91, 46, 247, 0.15);
-      border: 1px solid rgba(91, 46, 247, 0.4);
-      color: #00d4ff;
+      background-color: #f6f4ff;
+      border: 1px solid #e9e5ff;
+      color: #5B2EF7;
       padding: 6px 14px;
       border-radius: 20px;
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 1.5px;
+      letter-spacing: 1px;
       text-transform: uppercase;
+      margin-bottom: 20px;
     }
 
     .greeting {
-      font-size: 22px;
-      font-weight: 800;
-      color: #ffffff;
+      font-size: 20px;
+      font-weight: 700;
+      color: #111111;
       margin-bottom: 16px;
-      letter-spacing: -0.5px;
     }
 
     .message {
       font-size: 14px;
       line-height: 24px;
-      color: #b0a8d6;
+      color: #555555;
       margin-bottom: 30px;
     }
     
     .message strong {
-      color: #00d4ff;
+      color: #5B2EF7;
     }
 
-    .console-card {
-      background-color: #080517;
-      border: 1px solid rgba(91, 46, 247, 0.3);
-      border-radius: 12px;
-      padding: 24px;
+    .otp-container {
       text-align: center;
-      margin: 32px 0;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .console-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(to right, transparent, #00d4ff, transparent);
-    }
-
-    .console-title {
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 11px;
-      color: rgba(0, 212, 255, 0.6);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 16px;
+      margin: 24px 0 32px 0;
     }
 
     .otp-box {
       display: inline-block;
-      background-color: rgba(91, 46, 247, 0.1);
-      border: 2px solid #5B2EF7;
+      background-color: #f6f4ff;
+      border: 2px dashed #5B2EF7;
       border-radius: 8px;
-      padding: 16px 28px;
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 38px;
-      font-weight: 900;
-      letter-spacing: 12px;
-      color: #00d4ff;
-      text-shadow: 0 0 12px rgba(0, 212, 255, 0.5);
+      padding: 16px 32px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: 8px;
+      color: #2d0745;
     }
 
     .disclaimer {
       font-size: 11px;
       line-height: 18px;
-      color: #6d668c;
+      color: #999999;
       text-align: justify;
       padding-top: 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      border-top: 1px solid #eeeeee;
     }
 
     .email-footer {
-      background: linear-gradient(135deg, #1b0c3d 0%, #0d0626 100%);
+      background: #111111;
       padding: 28px 40px;
       text-align: center;
-      border-top: 1px solid rgba(91, 46, 247, 0.15);
-      color: rgba(255, 255, 255, 0.6);
+      color: #888888;
+    }
+
+    .footer-logo {
+      display: inline-block;
+      max-width: 110px;
+      height: auto;
+      margin-bottom: 16px;
     }
     
     .footer-team {
       font-size: 12px;
       font-weight: 700;
-      color: #ffffff;
+      color: #cccccc;
       margin-bottom: 8px;
       letter-spacing: 1px;
       text-transform: uppercase;
@@ -162,55 +149,51 @@ export const emailOtp = `<!DOCTYPE html>
       font-size: 11px;
       line-height: 18px;
       margin-bottom: 8px;
-      color: rgba(255, 255, 255, 0.4);
     }
 
     .footer-copy {
       font-size: 11px;
-      color: rgba(255, 255, 255, 0.3);
     }
   </style>
 </head>
 <body>
 
   <div class="email-wrap">
-    <!-- Header -->
-    <div class="email-header">
-      <img src="{{logoUrl}}" alt="Espotz">
+    <!-- Banner -->
+    <div class="banner-container">
+      <img src="{{bannerUrl}}" alt="Security Banner" class="banner-img">
     </div>
 
     <!-- Body -->
     <div class="email-body">
-      <div class="badge-container">
-        <div class="badge">
-          <span>⚡</span> SECURITY AUTHENTICATOR
-        </div>
+      <div class="badge">
+        <span>🔑</span> SECURE LOGIN
       </div>
 
       <h1 class="greeting">Hi {{name}},</h1>
       
       <div class="message">
-        Use the access key below to sign in to your <strong>Espotz account</strong>. The key is valid for 10 minutes — input it into the screen where you requested access.
+        Use the code below to sign in to <strong>Espotz</strong>. The code is valid for 10 minutes — type it into the same screen where you entered your email.
       </div>
 
-      <div class="console-card">
-        <div class="console-title">ONE-TIME GENERATED ACCESS CODE</div>
+      <div class="otp-container">
         <div class="otp-box">{{code}}</div>
       </div>
 
-      <div class="message" style="font-size: 13px; color: #877fa3;">
-        If you didn't request this key, you can safely ignore this console transmission — someone may have typed your address by mistake.
+      <div class="message" style="font-size: 13px; color: #666666;">
+        If you didn't request this code, you can safely ignore this email — someone may have typed your address by mistake.
       </div>
 
       <div class="disclaimer">
-        <strong>Note:</strong> This is a computer-generated key token — please do not reply. For help, contact our support team.
+        <strong>Note:</strong> This is a computer-generated email — please do not reply. For help, contact our support team.
       </div>
     </div>
 
     <!-- Footer -->
     <div class="email-footer">
+      <img class="footer-logo" src="{{logoUrl}}" alt="Espotz">
       <div class="footer-team">TEAM ESPOTZ</div>
-      <div class="footer-text">This is an automated transactional security alert from Espotz security network.</div>
+      <div class="footer-text">This is an automated transactional email from Espotz security team.</div>
       <div class="footer-copy">&copy; Espotz, {{year}}</div>
     </div>
   </div>
