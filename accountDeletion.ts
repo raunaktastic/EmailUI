@@ -2,7 +2,7 @@
  * Espotz — Confirm Account Deletion Email Template
  *
  * Theme: Full Banner Light Layout (Consistent with Clan templates)
- * Features a top banner image, warning alert box,
+ * Features a top banner image, warning alert box with checklist,
  * and a weighty red confirmation button.
  *
  * Template Variables:
@@ -102,8 +102,14 @@ export const accountDeletion = `<!DOCTYPE html>
       color: #991b1b;
       margin-bottom: 30px;
     }
-    .whats-next strong {
-      color: #991b1b;
+
+    .checklist {
+      margin-top: 12px;
+      padding-left: 20px;
+    }
+
+    .checklist li {
+      margin-bottom: 6px;
     }
 
     .btn-container {
@@ -123,6 +129,7 @@ export const accountDeletion = `<!DOCTYPE html>
       border-radius: 6px;
       width: 100%;
       text-align: center;
+      box-shadow: 0 4px 14px rgba(220, 38, 38, 0.2);
     }
 
     .disclaimer {
@@ -179,17 +186,23 @@ export const accountDeletion = `<!DOCTYPE html>
     <!-- Body -->
     <div class="email-body">
       <div class="badge">
-        <span>⚠️</span> ACCOUNT SECURITY
+        <span>⚠️</span> ACCOUNT COMPLIANCE
       </div>
 
       <h1 class="greeting">Hi {{name}},</h1>
       
       <div class="message">
-        We received a request to <strong>permanently delete your Espotz account</strong>. To confirm, tap the button below. This will delete your account and personal data and sign you out everywhere.
+        We received a request to <strong>permanently delete your Espotz account</strong>. To confirm the deletion, tap the button below. This will sign you out everywhere and trigger data deletion.
       </div>
 
       <div class="whats-next">
-        <strong>⚠️ WARNING:</strong> This action cannot be undone. All your gaming statistics, achievements, wallets, and registered tournament data will be permanently wiped out.
+        <strong>⚠️ WARNING: THIS ACTION CANNOT BE UNDONE.</strong>
+        <p style="margin-top: 8px;">Completing this override request will initiate deletion of:</p>
+        <ul class="checklist">
+          <li>All personal profile and account credentials</li>
+          <li>Wallet balance, transaction history, and coins records</li>
+          <li>Team rosters, historical brackets, and tournament statistics</li>
+        </ul>
       </div>
 
       <div class="btn-container">
@@ -197,16 +210,16 @@ export const accountDeletion = `<!DOCTYPE html>
       </div>
 
       <div class="message" style="font-size: 13px; color: #666666;">
-        This link expires in <strong>1 hour</strong> and can be used once. If the button doesn't work, copy and paste this URL into your browser:<br/>
+        This verification link expires in <strong>1 hour</strong> and is valid for a single use. If the button doesn't work, copy and paste this URL into your browser:<br/>
         <a href="{{confirmUrl}}" style="color:#5B2EF7;word-break:break-all">{{confirmUrl}}</a>
       </div>
 
       <div class="message" style="font-size: 13px; color: #666666; margin-top: 10px;">
-        If you didn't request this, you can safely ignore this email — your account will not be deleted.
+        If you didn't request this action, you can safely ignore this email — your account will not be affected.
       </div>
 
       <div class="disclaimer">
-        <strong>Note:</strong> This is a computer-generated email — please do not reply. For help, contact our support team.
+        <strong>Note:</strong> This is a computer-generated account compliance notification — please do not reply. For help, contact our support team.
       </div>
     </div>
 
@@ -214,7 +227,7 @@ export const accountDeletion = `<!DOCTYPE html>
     <div class="email-footer">
       <img class="footer-logo" src="{{logoUrl}}" alt="Espotz">
       <div class="footer-team">TEAM ESPOTZ</div>
-      <div class="footer-text">This is an automated transactional email from Espotz security team.</div>
+      <div class="footer-text">This is an automated transactional security alert from Espotz compliance department.</div>
       <div class="footer-copy">&copy; Espotz, {{year}}</div>
     </div>
   </div>
