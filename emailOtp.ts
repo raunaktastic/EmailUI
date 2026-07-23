@@ -251,15 +251,20 @@ export const emailOtp = `<!DOCTYPE html>
       margin-bottom: 24px;
     }
     .social-icon {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       width: 32px;
       height: 32px;
       background: #1f1235;
       border-radius: 50%;
-      line-height: 32px;
-      color: #8b5cf6;
-      font-size: 14px;
       margin: 0 4px;
+    }
+    .social-icon img {
+      width: 16px;
+      height: 16px;
+      display: block;
+      border: 0;
     }
     .copyright {
       font-size: 11px;
@@ -347,10 +352,10 @@ export const emailOtp = `<!DOCTYPE html>
         
         <div class="footer-social-title">Follow ESPOTZ</div>
         <div class="social-icons">
-          <span class="social-icon">IG</span>
-          <span class="social-icon">DC</span>
-          <span class="social-icon">YT</span>
-          <span class="social-icon">TW</span>
+          <a href="#" class="social-icon"><img src="https://img.icons8.com/ios-filled/50/8b5cf6/instagram-new.png" alt="Instagram"></a>
+          <a href="#" class="social-icon"><img src="https://img.icons8.com/ios-filled/50/8b5cf6/discord-logo.png" alt="Discord"></a>
+          <a href="#" class="social-icon"><img src="https://img.icons8.com/ios-filled/50/8b5cf6/youtube-play.png" alt="YouTube"></a>
+          <a href="#" class="social-icon"><img src="https://img.icons8.com/ios-filled/50/8b5cf6/twitterx--v1.png" alt="Twitter"></a>
         </div>
         
         <div class="copyright">&copy; {{year}} ESPOTZ. All rights reserved.</div>
