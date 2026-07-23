@@ -1,9 +1,10 @@
 /**
  * Espotz — Login Code Email Template
  *
- * Theme: Premium Dark Esports Aesthetic
+ * Theme: Premium Dark Esports Aesthetic (Contained Box)
  * Features a deep purple background, dynamic top banner,
- * and a floating white card containing the verification code.
+ * and a floating white card containing the verification code,
+ * all securely contained within a 600px email box.
  *
  * Template Variables:
  *  {{logoUrl}}       — Full URL to the Espotz logo image
@@ -23,7 +24,7 @@ export const emailOtp = `<!DOCTYPE html>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      background-color: #0b0216;
+      background-color: #f4f3f8;
       font-family: 'Inter', Arial, sans-serif;
       -webkit-font-smoothing: antialiased;
       padding: 0;
@@ -33,16 +34,24 @@ export const emailOtp = `<!DOCTYPE html>
     a { text-decoration: none; }
     img { display: block; border: 0; }
 
-    .email-wrapper {
+    /* The outer light-gray wrapper mimicking the email client's background */
+    .outer-wrapper {
       width: 100%;
-      background-color: #0b0216;
-      background-image: radial-gradient(circle at 50% 0%, #1d0b47 0%, #0b0216 60%);
+      background-color: #f4f3f8;
       padding: 40px 12px;
     }
 
+    /* The actual 600px email container carrying the dark theme */
     .email-container {
       max-width: 600px;
       margin: 0 auto;
+      background-color: #0b0216;
+      background-image: radial-gradient(circle at 50% 0%, #1d0b47 0%, #0b0216 60%);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+      padding-top: 40px;
+      padding-bottom: 40px;
     }
 
     /* Header Section */
@@ -66,9 +75,6 @@ export const emailOtp = `<!DOCTYPE html>
     .banner-wrapper {
       width: 100%;
       height: 180px;
-      border-radius: 12px 12px 0 0;
-      overflow: hidden;
-      margin-bottom: -40px; /* Overlap effect */
       position: relative;
       z-index: 1;
     }
@@ -79,11 +85,12 @@ export const emailOtp = `<!DOCTYPE html>
       opacity: 0.8;
     }
 
-    /* White Card */
+    /* Floating White Card (Contained in the box) */
     .content-card {
       background: #ffffff;
       border-radius: 16px;
       padding: 48px 40px;
+      margin: -60px 24px 0 24px; /* Floats up over the banner, spaced from edges */
       position: relative;
       z-index: 2;
       box-shadow: 0 10px 30px rgba(0,0,0,0.5);
@@ -262,7 +269,7 @@ export const emailOtp = `<!DOCTYPE html>
 </head>
 <body>
 
-  <div class="email-wrapper">
+  <div class="outer-wrapper">
     <div class="email-container">
       
       <!-- Top Logo & Tagline -->
