@@ -1,9 +1,9 @@
 /**
  * Espotz — Login Code Email Template
  *
- * Theme: Minimalist "Real Market" UI
- * An ultra-clean, highly professional layout similar to Stripe, Vercel, or Notion.
- * Focuses purely on typography, whitespace, and clear calls to action.
+ * Theme: Premium Modern SaaS UI
+ * Highly attractive CSS-driven layout without external banner images.
+ * Features a glowing dark container and a beautifully stylized white card.
  *
  * Template Variables:
  *  {{logoUrl}}       — Full URL to the Espotz logo image
@@ -18,38 +18,47 @@ export const emailOtp = `<!DOCTYPE html>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login code for Espotz</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      background-color: #f9fafb;
+      background-color: #f1f5f9;
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       -webkit-font-smoothing: antialiased;
       padding: 0;
       margin: 0;
-      color: #111827;
+      color: #18181b;
     }
-    a { text-decoration: none; color: #6d28d9; }
+    a { text-decoration: none; color: #7c3aed; }
     img { display: block; border: 0; }
 
     .wrapper {
       width: 100%;
-      background-color: #f9fafb;
+      background-color: #f1f5f9;
       padding: 40px 16px;
     }
 
     .container {
-      max-width: 560px;
+      max-width: 600px;
       margin: 0 auto;
+    }
+
+    /* Premium Dark Container with Glowing Top */
+    .email-box {
+      background-color: #09090b;
+      background-image: radial-gradient(circle at top center, rgba(139, 92, 246, 0.35) 0%, rgba(9, 9, 11, 1) 60%);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 24px 48px rgba(0,0,0,0.15);
     }
 
     /* Logo Header */
     .header {
-      margin-bottom: 32px;
+      padding: 48px 20px 32px 20px;
       text-align: center;
     }
     .header-logo {
-      height: 32px;
+      height: 36px;
       width: auto;
       margin: 0 auto;
     }
@@ -57,93 +66,121 @@ export const emailOtp = `<!DOCTYPE html>
     /* Main White Card */
     .content-card {
       background-color: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
-      padding: 48px;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+      border-radius: 20px;
+      padding: 48px 40px;
+      margin: 0 24px 32px 24px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+      position: relative;
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: #f3e8ff;
+      color: #7e22ce;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      border: 1px solid #e9d5ff;
     }
 
     .title {
-      font-size: 24px;
-      font-weight: 700;
-      color: #111827;
-      margin-bottom: 24px;
+      font-size: 28px;
+      font-weight: 800;
+      color: #18181b;
+      margin-bottom: 12px;
       letter-spacing: -0.5px;
+    }
+    .title span {
+      color: #7c3aed;
     }
 
     .message {
       font-size: 15px;
       line-height: 24px;
-      color: #4b5563;
+      color: #52525b;
       margin-bottom: 32px;
     }
 
-    /* OTP Box */
+    /* Stylish OTP Box */
     .otp-box {
-      background-color: #f3f4f6;
-      border: 1px solid #e5e7eb;
-      border-radius: 8px;
-      padding: 24px;
+      background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+      border: 1px solid #ddd6fe;
+      border-radius: 16px;
+      padding: 32px 24px;
       text-align: center;
       margin-bottom: 32px;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
     }
     .otp-code {
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      font-size: 40px;
-      font-weight: 700;
-      color: #111827;
+      font-size: 44px;
+      font-weight: 800;
+      color: #4c1d95;
       letter-spacing: 24px;
       margin-right: -24px; /* Offset the extra spacing on the last character */
+      text-shadow: 0 2px 10px rgba(124, 58, 237, 0.2);
     }
 
     /* Security Note */
-    .note {
-      font-size: 14px;
-      line-height: 22px;
-      color: #6b7280;
-      margin-bottom: 0;
+    .note-box {
+      background-color: #f8fafc;
+      border-left: 4px solid #cbd5e1;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 24px;
     }
-    
-    .divider {
-      height: 1px;
-      background-color: #e5e7eb;
-      margin: 32px 0;
+    .note {
+      font-size: 13px;
+      line-height: 20px;
+      color: #64748b;
+      margin: 0;
     }
 
     .help-text {
       font-size: 13px;
-      color: #9ca3af;
+      color: #94a3b8;
       line-height: 20px;
+      text-align: center;
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #f1f5f9;
     }
 
     /* Footer */
     .footer {
       text-align: center;
-      padding-top: 32px;
-      padding-bottom: 32px;
+      padding: 0 20px 48px 20px;
     }
     .footer-links {
-      font-size: 13px;
-      color: #6b7280;
+      font-size: 12px;
+      font-weight: 600;
+      color: #a1a1aa;
       margin-bottom: 16px;
+      letter-spacing: 0.5px;
     }
     .footer-links a {
-      color: #6b7280;
-      margin: 0 8px;
-      font-weight: 500;
+      color: #a1a1aa;
+      margin: 0 10px;
+      text-transform: uppercase;
+      transition: color 0.2s;
     }
     .footer-links a:hover {
-      color: #111827;
+      color: #ffffff;
     }
     .copyright {
-      font-size: 12px;
-      color: #9ca3af;
+      font-size: 11px;
+      color: #71717a;
     }
     
     /* Responsive */
     @media only screen and (max-width: 600px) {
       .content-card {
         padding: 32px 24px;
+        margin: 0 16px 24px 16px;
       }
       .otp-code {
         font-size: 32px;
@@ -157,50 +194,52 @@ export const emailOtp = `<!DOCTYPE html>
 
   <div class="wrapper">
     <div class="container">
-      
-      <!-- Header -->
-      <div class="header">
-        <img class="header-logo" src="{{logoUrl}}" alt="Espotz">
-      </div>
-
-      <!-- Main Content Card -->
-      <div class="content-card">
+      <div class="email-box">
         
-        <h1 class="title">Verify your email</h1>
-        
-        <div class="message">
-          Hi {{name}},<br><br>
-          Use the code below to sign in to Espotz. This code is valid for 10 minutes — type it into the same screen where you entered your email.
+        <!-- Header -->
+        <div class="header">
+          <img class="header-logo" src="{{logoUrl}}" alt="Espotz">
         </div>
 
-        <!-- Verification Code -->
-        <div class="otp-box">
-          <div class="otp-code">{{code}}</div>
+        <!-- Main Content Card -->
+        <div class="content-card">
+          
+          <div class="badge">SECURITY VERIFICATION</div>
+          
+          <h1 class="title">Verify your <span>email</span></h1>
+          
+          <div class="message">
+            Hi {{name}},<br><br>
+            Use the code below to sign in to Espotz. This code is valid for 10 minutes — type it into the same screen where you entered your email.
+          </div>
+
+          <!-- Verification Code -->
+          <div class="otp-box">
+            <div class="otp-code">{{code}}</div>
+          </div>
+
+          <div class="note-box">
+            <p class="note">If you didn't request this code, you can safely ignore this email — someone may have typed your address by mistake.</p>
+          </div>
+
+          <div class="help-text">
+            This is a computer-generated email. Please do not reply.<br>For help, contact our support team.
+          </div>
+
         </div>
 
-        <div class="note">
-          If you didn't request this code, you can safely ignore this email — someone may have typed your address by mistake.
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="help-text">
-          Note: This is a computer-generated email. Please do not reply. For help, contact our support team.
+        <!-- Text-based Footer -->
+        <div class="footer">
+          <div class="footer-links">
+            <a href="#">Instagram</a>
+            <a href="#">Discord</a>
+            <a href="#">YouTube</a>
+            <a href="#">Twitter</a>
+          </div>
+          <div class="copyright">&copy; {{year}} Espotz Inc. All rights reserved.</div>
         </div>
 
       </div>
-
-      <!-- Text-based Footer -->
-      <div class="footer">
-        <div class="footer-links">
-          <a href="#">Instagram</a> &bull;
-          <a href="#">Discord</a> &bull;
-          <a href="#">YouTube</a> &bull;
-          <a href="#">Twitter</a>
-        </div>
-        <div class="copyright">&copy; {{year}} Espotz Inc. All rights reserved.</div>
-      </div>
-
     </div>
   </div>
 
