@@ -195,29 +195,27 @@ export const accountDeletion = `<!DOCTYPE html>
     }
 
     /* Footer */
-    .footer {
+    .email-footer {
+      background: #0a0814;
+      padding: 24px 40px;
       text-align: center;
-      padding: 0 20px 48px 20px;
+      border-radius: 0 0 20px 20px;
     }
-    .footer-links {
-      font-size: 12px;
-      font-weight: 600;
-      color: #a1a1aa;
-      margin-bottom: 16px;
-      letter-spacing: 0.5px;
-    }
-    .footer-links a {
-      color: #a1a1aa;
-      margin: 0 10px;
+    .footer-team {
+      font-size: 13px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 4px;
+      letter-spacing: 1px;
       text-transform: uppercase;
-      transition: color 0.2s;
     }
-    .footer-links a:hover {
-      color: #ffffff;
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
     }
-    .copyright {
-      font-size: 11px;
-      color: #71717a;
+    .footer-copy a {
+      color: #7c3aed;
+      text-decoration: underline;
     }
     
     /* Responsive */
@@ -276,15 +274,10 @@ export const accountDeletion = `<!DOCTYPE html>
 
         </div>
 
-        <!-- Text-based Footer -->
-        <div class="footer">
-          <div class="footer-links">
-            <a href="#">Instagram</a>
-            <a href="#">Discord</a>
-            <a href="#">YouTube</a>
-            <a href="#">Twitter</a>
-          </div>
-          <div class="copyright">&copy; {{year}} Espotz Inc. All rights reserved.</div>
+        <!-- Footer -->
+        <div class="email-footer">
+          <p class="footer-team">Team Espotz</p>
+          <p class="footer-copy">&copy; Espotz, {{year}} &nbsp;|&nbsp; <a href="#">Unsubscribe</a></p>
         </div>
 
       </div>
